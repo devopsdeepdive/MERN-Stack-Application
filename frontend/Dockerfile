@@ -1,32 +1,21 @@
-# ------------------- Stage 1: Build Stage ------------------------------
-FROM node:21 AS frontend-builder
+# Dockerfile based on node:21
+FROM node:21
 
-# Set the working directory to /app
+# Set working directory
 WORKDIR /app
 
-# Copy the package.json and package-lock.json for dependency installation
+# Copy package files and install dependencies
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
 
-# Copy the rest of the application code
+# Copy application source code
 COPY . .
 
-# ------------------- Stage 2: Final Stage ------------------------------
-FROM node:21-slim
-
-# Set the working directory to /app
-WORKDIR /app
-
-# Copy built assets and dependencies from frontend-builder stage
-COPY --from=frontend-builder /app .
-
-# Copy the .env.docker file to .env.local
+# Rename env file
 COPY .env.docker .env.local
 
-# Expose port 5173 for the Node.js application
+# Expose the port your app runs on
 EXPOSE 5173
 
-# Define the default command to run the application in development mode
+# Run the app in development mode
 CMD ["npm", "run", "dev", "--", "--host"]
