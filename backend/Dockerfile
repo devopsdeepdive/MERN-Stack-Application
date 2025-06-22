@@ -1,28 +1,20 @@
-# Stage 1
-FROM node:21 AS backend-builder
+# Dockerfile using node:21
+FROM node:21
 
-# setup the working dir
+# Set the working directory
 WORKDIR /app
 
-# code
+# Copy all source code
 COPY . .
 
-# packages install
-RUN npm i
+# Install packages
+RUN npm install
 
-# Stage 2
-FROM node:21-slim
-
-# setup the working dir
-WORKDIR /app
-
-# copy the above stage as compressed
-COPY --from=backend-builder /app .
-
+# Rename environment file
 COPY .env.docker .env
 
-# Port
+# Expose app port
 EXPOSE 5000
 
-# App
+# Run the application
 CMD ["npm", "start"]
