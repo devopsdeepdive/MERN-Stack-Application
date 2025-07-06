@@ -12,10 +12,12 @@ MONGODB_URI="mongodb://mongo-service/wanderlust"
 * Rebuild the docker image with tag and push it to DockerHub
 ```bash
 cd fronetnd
-docker build -t <your-dockuerhub-username>/frontend:06.07.25 .
+docker build -t <your-dockuerhub-username>/frontend:07.07.25 .
+docker build -t <your-dockuerhub-username>/backend:07.07.25 .
 docker login -u <your-dockuerhub-username>
 docker images
 docker push <your-dockuerhub-username>/frontend:<TAG>
+docker push <your-dockuerhub-username>/backend:<TAG>
 ```
 <img width="1422" alt="Screenshot 2025-07-06 at 11 38 18 PM" src="https://github.com/user-attachments/assets/115e2b00-74c0-4be8-95d0-df7c4f8a9aab" />
 
