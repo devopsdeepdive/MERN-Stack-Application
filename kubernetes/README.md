@@ -1,7 +1,14 @@
 ## Steps to Deploy in Kubernetes Cluster:
 
 ### Prerequisite:
-* Update the .env.docker file in frontend directory
+* Update the **.env.docker** file in **frontend** directory
+```bash
+VITE_API_PATH="http://192.168.68.88:31100" # this ip from worker node
+```
+* Update the **.env.docker** file in **backend** directory
+```bash
+MONGODB_URI="mongodb://mongo-service/wanderlust"
+```
 * Rebuild the docker image with tag and push it to DockerHub
 ```bash
 cd fronetnd
