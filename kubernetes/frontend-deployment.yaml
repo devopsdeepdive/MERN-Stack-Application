@@ -16,10 +16,8 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: amigosnishant/frontend:latest
-          env:
-            - name: VITE_API_PATH
-              value: "http://backend:5000"
+          image: amigosnishant/frontend:<TAG>
+          imagePullPolicy: Always
           ports:
             - containerPort: 5173
 
@@ -33,6 +31,7 @@ spec:
   - port: 5173
     targetPort: 5173
     protocol: TCP
+    nodePort: 31000
   type: NodePort
   selector:
     app: frontend
