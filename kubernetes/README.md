@@ -1,5 +1,24 @@
 ## Steps to Deploy in Kubernetes Cluster:
 
+### Prerequisite:
+* Update the .env.docker file in frontend directory
+* Rebuild the docker image with tag and push it to DockerHub
+```bash
+cd fronetnd
+docker build -t <your-dockuerhub-username>/frontend:06.07.25 .
+docker login -u <your-dockuerhub-username>
+docker images
+docker push <your-dockuerhub-username>/frontend:<TAG>
+```
+<img width="1422" alt="Screenshot 2025-07-06 at 11 38 18 PM" src="https://github.com/user-attachments/assets/115e2b00-74c0-4be8-95d0-df7c4f8a9aab" />
+
+<img width="1422" alt="Screenshot 2025-07-06 at 11 39 55 PM" src="https://github.com/user-attachments/assets/73269175-08bc-443c-8792-a78ad4cc8f83" />
+
+<img width="1440" alt="Screenshot 2025-07-06 at 11 40 49 PM" src="https://github.com/user-attachments/assets/3e4d0985-1db0-4b8f-bfdf-b65241b2d374" />
+
+* Now once the image is pushed you can just update the image tag in frontend-deployment.yaml which you pushed above.
+<img width="807" alt="Screenshot 2025-07-06 at 11 44 36 PM" src="https://github.com/user-attachments/assets/3432d46c-5bf2-41d5-8148-b1e27a5fa8b6" />
+
 Enable DNS resolution on kubernetes cluster :
 > Check coredns pod in kube-system namespace
 ```bash
