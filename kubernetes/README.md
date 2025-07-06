@@ -48,6 +48,7 @@ Results:
 > Get the PublicIP and connect frontend:
 ```bash
 kubectl get svc
+kubectl port-forward service/frontend <node-port>:5173 --address 0.0.0.0 &
 ```
 
 ![image](https://github.com/user-attachments/assets/451ef39f-0ed7-48e8-84cd-d90c4e82ac2e)
