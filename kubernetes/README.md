@@ -55,24 +55,6 @@ kubectl create -f kubernetes/
 kubectl describe pod <pod-name> 
 kubectl logs <pod-name>
 ```
-> Now before adding data, first check and make sure you are in project root
-```bash
-pwd
-```
-<img width="1422" alt="Screenshot 2025-07-06 at 11 02 33 PM" src="https://github.com/user-attachments/assets/870cdaa0-0288-4d10-b59c-040159981066" />
-
-> Add data to mongo db wanderlust DB for that copy file to mongo pod
-```bash
-kubectl cp ./backend/data/sample_posts.json mongo-deployment-56d49bdcf6–48g59:/sample_posts.json
-```
-> Connect to mongo pod
-```bash
-kubectl exec -it <mongo-deployment-7-pod-name> -- /bin/bash
-```
-> Execute mongoimport command
-```bash
-mongoimport --db wanderlust --collection posts --file sample_posts.json --jsonArray
-```
 Results:
 > Get the PublicIP and connect frontend:
 ```bash
