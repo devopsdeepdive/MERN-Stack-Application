@@ -78,20 +78,3 @@ Results:
 ```bash
 kubectl port-forward service/frontend 31000:5173 --address 0.0.0.0 &
 ```
-
-![image](https://github.com/user-attachments/assets/451ef39f-0ed7-48e8-84cd-d90c4e82ac2e)
-
-> Go inside mongodb pod:
-```bash
-kubectl exec -it <mongo-deployment-pod> -- /bin/bash
-```
-<img width="1422" alt="Screenshot 2025-07-06 at 11 16 47 PM" src="https://github.com/user-attachments/assets/85f27add-3388-498c-80c7-36fc292a3115" />
-
-> We can check sample data login in the DB shell
-```bash
-mongo
-show dbs;
-use wanderlust;
-show tables;
-show collections;
-```
