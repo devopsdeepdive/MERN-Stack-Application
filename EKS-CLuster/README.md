@@ -1,7 +1,7 @@
 # Create EKS on AWS using Terraform.
 
 ### EKS Architecture:
-![image](https://github.com/user-attachments/assets/46e47dc0-70e1-42ab-b591-ac59bccdd86b)
+<img width="874" alt="Screenshot 2025-07-10 at 1 36 39 PM" src="https://github.com/user-attachments/assets/cf80f42b-ac60-4065-8237-e46ebdb60e49" />
 
 ### Prerequisites
 
