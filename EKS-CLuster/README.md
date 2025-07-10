@@ -56,6 +56,11 @@ aws eks --region us-east-1 update-kubeconfig --name project
 8. Verify resources
 <img width="1433" alt="Screenshot 2024-12-03 at 12 12 54 PM" src="https://github.com/user-attachments/assets/caa1c4f1-b311-4ab7-aaec-174dc8a15354">
 
+To verify EKS Cluster Versio
+```
+aws eks describe-cluster --name project --region us-east-1 --query "cluster.version" --output text
+```
+
 ### NOTE: Make sure to delete the resources:
 ```bash
 terraform destroy
