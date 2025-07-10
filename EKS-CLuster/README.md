@@ -29,7 +29,26 @@ terraform apply
 
 <img width="1433" alt="Screenshot 2024-12-03 at 12 08 29 PM" src="https://github.com/user-attachments/assets/f7fdbe1d-b4dd-4cfd-97f0-66077fb4417c">
 
-6. Once the cluster is up, you can configure kubectl to interact with it by using the aws eks update-kubeconfig command. Here's the command to set up the kubeconfig file:
+6. kubectl Install:
+```
+# Remove any broken version
+sudo rm -f /usr/local/bin/kubectl
+
+# Download latest stable kubectl (works with EKS 1.33)
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Make it executable
+chmod +x kubectl
+
+# Move it to system path
+sudo mv kubectl /usr/local/bin/
+
+# Check version
+kubectl version --client
+```
+
+7. Once the cluster is up, you can configure kubectl to interact with it by using the aws eks update-kubeconfig command. Here's the command to set up the kubeconfig file:
+   
 ```bash
 aws eks --region us-east-1 update-kubeconfig --name project
 ```
