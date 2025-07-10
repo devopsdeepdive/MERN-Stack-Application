@@ -1,5 +1,8 @@
 # Create EKS on AWS using Terraform.
 
+### EKS Architecture:
+![image](https://github.com/user-attachments/assets/46e47dc0-70e1-42ab-b591-ac59bccdd86b)
+
 ### Prerequisites
 
 1. We need to install AWS CLI as we will use the AWS CLI (aws configure) command to connect Terraform with AWS in the next steps.
