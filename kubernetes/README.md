@@ -27,6 +27,9 @@ docker push <your-dockuerhub-username>/backend:<TAG>
 <img width="1440" alt="Screenshot 2025-07-06 at 11 40 49 PM" src="https://github.com/user-attachments/assets/3e4d0985-1db0-4b8f-bfdf-b65241b2d374" />
 
 * Now once the image is pushed you can just update the image tag in **frontend-deployment.yaml** and **backend-deployment.yaml** which you pushed above.
+
+cd kubernetes
+
 <img width="807" alt="Screenshot 2025-07-06 at 11 44 36 PM" src="https://github.com/user-attachments/assets/3432d46c-5bf2-41d5-8148-b1e27a5fa8b6" />
 
 Enable DNS resolution on kubernetes cluster :
