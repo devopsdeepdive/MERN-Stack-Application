@@ -30,6 +30,10 @@ You can install the Helm chart using the following command:
 ```bash
 helm upgrade --install wanderlast --dry-run --debug .
 ```
+To Install chart:
+```
+helm upgrade --install wanderlast .
+```
 
 
 ## Configuration
